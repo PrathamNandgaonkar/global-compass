@@ -66,7 +66,7 @@ export default function Compare() {
               </thead>
               <tbody>
                 {metrics.map((m, i) => {
-                  const values = selectedCountries.map(c => (c as Record<string, unknown>)[m.key] as number);
+                  const values = selectedCountries.map(c => (c as unknown as Record<string, unknown>)[m.key] as number);
                   const best = Math.max(...values);
 
                   return (
