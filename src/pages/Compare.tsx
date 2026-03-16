@@ -73,7 +73,7 @@ export default function Compare() {
                     <tr key={m.label} className={i % 2 === 0 ? "bg-muted/30" : ""}>
                       <td className="p-4 text-sm font-medium text-muted-foreground">{m.label}</td>
                       {selectedCountries.map(c => {
-                        const val = (c as Record<string, unknown>)[m.key] as number;
+                        const val = (c as unknown as Record<string, unknown>)[m.key] as number;
                         const isBest = val === best;
                         return (
                           <td key={c.id} className="p-4 text-center">
